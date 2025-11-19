@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wees moois | Transforma tu Cabello con Keratina</title>
+    
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Carga de la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-purple': '#a640c0',
+                        'secondary-lavender': '#fac8fa',
+                        'neutral-white': '#fff',
+                        'dark-text': '#1f2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Mejorar el hero background para GitHub Pages */
+        .hero-bg {
+            background: linear-gradient(135deg, #a640c0 0%, #fac8fa 100%);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Estilos adicionales para mejor visualización */
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-sans text-dark-text bg-neutral-white">
+
+    <!-- Navbar Fija -->
+    <header class="sticky top-0 z-50 bg-primary-purple shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#inicio" class="text-2xl font-bold text-neutral-white">wees moois</a>
+            <div class="hidden lg:flex space-x-8">
+                <a href="#inicio" class="text-neutral-white hover:text-secondary-lavender transition duration-300">Inicio</a>
+                <a href="#tienda" class="text-neutral-white hover:text-secondary-lavender transition duration-300">Tienda</a>
+                <a href="#acerca" class="text-neutral-white hover:text-secondary-lavender transition duration-300">Acerca de Nosotros</a>
+                <a href="#blog" class="text-neutral-white hover:text-secondary-lavender transition duration-300">Blog</a>
+                <a href="#contacto" class="text-neutral-white hover:text-secondary-lavender transition duration-300">Contacto</a>
+            </div>
+            <!-- Botón de Menú para Móvil -->
+            <button id="mobile-menu-button" class="lg:hidden text-neutral-white focus:outline-none">
+                <!-- Icono de Hamburguesa (SVG) -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-primary-purple/95 py-2">
+            <a href="#inicio" class="block px-4 py-2 text-neutral-white hover:bg-primary-purple/70">Inicio</a>
+            <a href="#tienda" class="block px-4 py-2 text-neutral-white hover:bg-primary-purple/70">Tienda</a>
+            <a href="#acerca" class="block px-4 py-2 text-neutral-white hover:bg-primary-purple/70">Acerca de Nosotros</a>
+            <a href="#blog" class="block px-4 py-2 text-neutral-white hover:bg-primary-purple/70">Blog</a>
+            <a href="#contacto" class="block px-4 py-2 text-neutral-white hover:bg-primary-purple/70">Contacto</a>
+        </div>
+    </header>
+
+    <!-- 1. INICIO (HOME) -->
+    <section id="inicio" class="pt-16">
+        <!-- Banner Principal (Hero Section) -->
+        <div class="hero-bg h-[70vh] flex items-center justify-center text-center px-4">
+            <div class="bg-black/40 p-8 rounded-xl max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-neutral-white mb-4 leading-tight">
+                    Transforma tu Cabello con el Poder de la Keratina
+                </h1>
+                <p class="text-xl text-secondary-lavender mb-8">
+                    Fórmulas únicas que reparan, alisan y dan un brillo insuperable.
+                </p>
+                <a href="#tienda" class="inline-block px-10 py-4 bg-primary-purple text-neutral-white font-semibold text-lg rounded-full shadow-2xl hover:bg-primary-purple/80 transition transform hover:scale-105 duration-300">
+                    Comprar Productos Ahora 🛒
+                </a>
+            </div>
+        </div>
+
+        <!-- Bloque de Propuesta de Valor -->
+        <div class="py-16 bg-secondary-lavender/30">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-primary-purple">Nuestra Promesa de Belleza</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Valor 1: Fórmulas Naturales -->
+                    <div class="text-center p-6 bg-neutral-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl text-primary-purple mb-3 block">🌿</span>
+                        <h3 class="text-xl font-semibold mb-2">Fórmulas Naturales</h3>
+                        <p class="text-sm text-gray-600">Ingredientes botánicos que nutren desde la raíz hasta la punta.</p>
+                    </div>
+                    <!-- Valor 2: Sin Sulfatos -->
+                    <div class="text-center p-6 bg-neutral-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl text-primary-purple mb-3 block">🚫</span>
+                        <h3 class="text-xl font-semibold mb-2">Libre de Químicos Agresivos</h3>
+                        <p class="text-sm text-gray-600">Cuidado capilar sin sulfatos, parabenos ni sales añadidas.</p>
+                    </div>
+                    <!-- Valor 3: Tecnología Avanzada -->
+                    <div class="text-center p-6 bg-neutral-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl text-primary-purple mb-3 block">🔬</span>
+                        <h3 class="text-xl font-semibold mb-2">Tecnología Avanzada</h3>
+                        <p class="text-sm text-gray-600">Keratina hidrolizada de última generación para máxima absorción.</p>
+                    </div>
+                    <!-- Valor 4: Cruelty-Free -->
+                    <div class="text-center p-6 bg-neutral-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl text-primary-purple mb-3 block">🐰</span>
+                        <h3 class="text-xl font-semibold mb-2">Cruelty-Free</h3>
+                        <p class="text-sm text-gray-600">Ética y belleza, sin pruebas en animales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonios Destacados -->
+        <div class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-dark-text">Lo que dicen nuestros clientes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Testimonio 1 -->
+                    <div class="bg-primary-purple/10 p-8 rounded-xl shadow-md border-l-4 border-primary-purple">
+                        <p class="italic text-lg mb-4 text-dark-text">"Mi cabello nunca se había sentido tan suave y manejable. El tratamiento de Keratina wees moois es un verdadero milagro. ¡Adiós frizz!"</p>
+                        <p class="font-semibold text-primary-purple">- Andrea F., Cliente Certificada</p>
+                    </div>
+                    <!-- Testimonio 2 -->
+                    <div class="bg-primary-purple/10 p-8 rounded-xl shadow-md border-l-4 border-primary-purple">
+                        <p class="italic text-lg mb-4 text-dark-text">"Uso el Shampoo Especializado Post-Alisado y el efecto liso me dura el doble. La calidad es increíble por el precio."</p>
+                        <p class="font-semibold text-primary-purple">- Laura P., Estilista Profesional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. TIENDA / PRODUCTOS -->
+    <section id="tienda" class="py-20 bg-secondary-lavender/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-extrabold text-center mb-16 text-primary-purple">Nuestros Productos Estrella 🛒</h2>
+
+            <!-- Filtros (Simulación) -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <button class="bg-primary-purple text-neutral-white px-5 py-2 rounded-full font-medium shadow-md">Todos</button>
+                <button class="bg-neutral-white border border-primary-purple text-primary-purple px-5 py-2 rounded-full font-medium hover:bg-primary-purple/10 transition">Tratamientos</button>
+                <button class="bg-neutral-white border border-primary-purple text-primary-purple px-5 py-2 rounded-full font-medium hover:bg-primary-purple/10 transition">Shampoos</button>
+                <button class="bg-neutral-white border border-primary-purple text-primary-purple px-5 py-2 rounded-full font-medium hover:bg-primary-purple/10 transition">Post-Alisado</button>
+                <button class="bg-neutral-white border border-primary-purple text-primary-purple px-5 py-2 rounded-full font-medium hover:bg-primary-purple/10 transition">Kits</button>
+            </div>
+
+            <!-- Vista de Cuadrícula de Productos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Producto 1: Tratamiento Keratina Intensiva -->
+                <div class="product-card bg-neutral-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x400/a640c0/ffffff?text=Keratina" alt="[Imagen de Tratamiento Keratina]" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-dark-text mb-1">Keratina Intensiva 500ml</h3>
+                        <p class="text-sm text-gray-500 mb-3">Reparación total y efecto liso.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-primary-purple">$39.99</span>
+                            <button onclick="addToCart('Keratina Intensiva')" class="bg-primary-purple text-neutral-white px-4 py-2 text-sm rounded-lg hover:bg-primary-purple/80 transition">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2: Shampoo Sin Sulfatos -->
+                <div class="product-card bg-neutral-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x400/fac8fa/a640c0?text=Shampoo" alt="[Imagen de Shampoo Sin Sulfatos]" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-dark-text mb-1">Shampoo Diario 300ml</h3>
+                        <p class="text-sm text-gray-500 mb-3">Fórmula suave para todo tipo de cabello.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-primary-purple">$18.50</span>
+                            <button onclick="addToCart('Shampoo Diario')" class="bg-primary-purple text-neutral-white px-4 py-2 text-sm rounded-lg hover:bg-primary-purple/80 transition">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3: Acondicionador Post-Alisado -->
+                <div class="product-card bg-neutral-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x400/a640c0/fac8fa?text=Acondicionador" alt="[Imagen de Acondicionador Post-Alisado]" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-dark-text mb-1">Acondicionador Sellador</h3>
+                        <p class="text-sm text-gray-500 mb-3">Prolonga el efecto liso y el brillo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-primary-purple">$21.99</span>
+                            <button onclick="addToCart('Acondicionador Sellador')" class="bg-primary-purple text-neutral-white px-4 py-2 text-sm rounded-lg hover:bg-primary-purple/80 transition">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 4: Mascarilla Reparadora -->
+                <div class="product-card bg-neutral-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x400/fac8fa/a640c0?text=Mascarilla" alt="[Imagen de Mascarilla Reparadora]" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-dark-text mb-1">Mascarilla de Noche</h3>
+                        <p class="text-sm text-gray-500 mb-3">Nutrición profunda mientras duermes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-primary-purple">$29.00</span>
+                            <button onclick="addToCart('Mascarilla de Noche')" class="bg-primary-purple text-neutral-white px-4 py-2 text-sm rounded-lg hover:bg-primary-purple/80 transition">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 5: Kit de Viaje -->
+                <div class="product-card bg-neutral-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x400/a640c0/ffffff?text=Kit+Viaje" alt="[Imagen de Kit de Viaje]" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-dark-text mb-1">Kit Básico de Viaje</h3>
+                        <p class="text-sm text-gray-500 mb-3">Tus esenciales en tamaño mini.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-primary-purple">$15.75</span>
+                            <button onclick="addToCart('Kit de Viaje')" class="bg-primary-purple text-neutral-white px-4 py-2 text-sm rounded-lg hover:bg-primary-purple/80 transition">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 6: Sérum de Brillo -->
+                <div class="product-card bg-neutral-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x400/fac8fa/a640c0?text=Serum" alt="[Imagen de Sérum de Brillo]" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-dark-text mb-1">Sérum Ultra Brillo</h3>
+                        <p class="text-sm text-gray-500 mb-3">Protección térmica y acabado espejo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-primary-purple">$25.00</span>
+                            <button onclick="addToCart('Sérum Ultra Brillo')" class="bg-primary-purple text-neutral-white px-4 py-2 text-sm rounded-lg hover:bg-primary-purple/80 transition">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor de Mensaje (para Añadir al Carrito) -->
+    <div id="message-box" class="fixed bottom-5 right-5 z-50 p-4 bg-primary-purple text-neutral-white rounded-lg shadow-2xl transition-opacity duration-300 opacity-0 pointer-events-none">
+        <!-- Contenido dinámico del mensaje -->
+    </div>
+
+    <!-- 3. ACERCA DE NOSOTROS (QUIÉNES SOMOS) -->
+    <section id="acerca" class="py-20 bg-neutral-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-extrabold text-center mb-16 text-primary-purple">Nuestra Historia y Misión 🌟</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Historia de la Marca -->
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-dark-text border-b-2 border-secondary-lavender pb-2">La Pasión Detrás de wees moois</h3>
+                    <p class="text-lg text-gray-700">wees moois nació en 2018 de la frustración por encontrar tratamientos de keratina que fueran realmente efectivos y a la vez respetuosos con la salud capilar. Nuestra fundadora, una química cosmética con más de 10 años de experiencia, decidió crear sus propias fórmulas: potentes, naturales y libres de tóxicos.</p>
+                    <p class="text-lg text-gray-700">Hoy, wees moois es sinónimo de innovación y calidad, dedicados a ofrecer soluciones de lujo para el cuidado del cabello en casa y en salones profesionales.</p>
+                </div>
+                
+                <!-- Imagen o Elemento Visual -->
+                <div class="rounded-xl overflow-hidden shadow-2xl">
+                    <img src="https://placehold.co/600x400/fac8fa/a640c0?text=Innovacion+y+Belleza" alt="[Imagen de Laboratorio y Belleza]" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Misión, Visión y Valores -->
+            <div class="mt-20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                    <!-- Misión -->
+                    <div class="p-6 bg-secondary-lavender rounded-xl shadow-lg">
+                        <h4 class="text-2xl font-bold mb-3 text-primary-purple">Misión</h4>
+                        <p class="text-gray-700">Transformar la rutina de cuidado capilar en un ritual de empoderamiento y salud, utilizando la mejor tecnología en keratina.</p>
+                    </div>
+                    <!-- Visión -->
+                    <div class="p-6 bg-secondary-lavender rounded-xl shadow-lg">
+                        <h4 class="text-2xl font-bold mb-3 text-primary-purple">Visión</h4>
+                        <p class="text-gray-700">Ser la marca líder mundial en tratamientos capilares basados en keratina ética y sostenible.</p>
+                    </div>
+                    <!-- Valores -->
+                    <div class="p-6 bg-secondary-lavender rounded-xl shadow-lg">
+                        <h4 class="text-2xl font-bold mb-3 text-primary-purple">Valores</h4>
+                        <ul class="list-none space-y-2 text-gray-700">
+                            <li>✨ Calidad Suprema</li>
+                            <li>🌱 Sostenibilidad</li>
+                            <li>🚀 Innovación Constante</li>
+                            <li>🤝 Transparencia Total</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. BLOG / CONSEJOS -->
+    <section id="blog" class="py-20 bg-secondary-lavender/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-extrabold text-center mb-16 text-primary-purple">Blog de Consejos Capilares 📰</h2>
+
+            <!-- Función de Búsqueda (Simulada) -->
+            <div class="max-w-xl mx-auto mb-10">
+                <input type="text" placeholder="Buscar artículos, guías..." class="w-full p-3 rounded-full border-2 border-primary-purple focus:ring-2 focus:ring-primary-purple/50 focus:border-primary-purple/50">
+            </div>
+
+            <!-- Artículos Relevantes -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Artículo 1 -->
+                <article class="bg-neutral-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/600x300/a640c0/ffffff?text=Guia+Keratina" alt="[Imagen de Guía de Uso de Keratina]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm font-semibold text-primary-purple uppercase mb-2 block">Tratamientos</span>
+                        <h3 class="text-xl font-bold mb-3 text-dark-text">Guía Completa: Cómo Usar la Keratina en Casa</h3>
+                        <p class="text-gray-600 line-clamp-3 mb-4">Aprende el paso a paso para aplicar tu tratamiento wees moois y maximizar los resultados. Consejos de expertos incluidos.</p>
+                        <a href="#" class="text-primary-purple font-medium hover:underline">Leer más →</a>
+                    </div>
+                </article>
+                
+                <!-- Artículo 2 -->
+                <article class="bg-neutral-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/600x300/fac8fa/a640c0?text=Shampoo+Correcto" alt="[Imagen de Shampoo Correcto]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm font-semibold text-primary-purple uppercase mb-2 block">Cuidado Diario</span>
+                        <h3 class="text-xl font-bold mb-3 text-dark-text">El Secreto para Elegir el Shampoo Especializado Correcto</h3>
+                        <p class="text-gray-600 line-clamp-3 mb-4">¿Cabello graso, seco o teñido? Te ayudamos a identificar la fórmula ideal de wees moois para tus necesidades específicas.</p>
+                        <a href="#" class="text-primary-purple font-medium hover:underline">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="bg-neutral-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/600x300/a640c0/fac8fa?text=Cabello+Teñido" alt="[Imagen de Cabello Teñido]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm font-semibold text-primary-purple uppercase mb-2 block">Post-Tratamiento</span>
+                        <h3 class="text-xl font-bold mb-3 text-dark-text">5 Consejos Infalibles para el Cabello Teñido y Alisado</h3>
+                        <p class="text-gray-600 line-clamp-3 mb-4">Mantén el color vibrante y el alisado perfecto por más tiempo con estos trucos de mantenimiento.</p>
+                        <a href="#" class="text-primary-purple font-medium hover:underline">Leer más →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONTACTO -->
+    <section id="contacto" class="py-20 bg-neutral-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-extrabold text-center mb-16 text-primary-purple">Hablemos | Contáctanos 📧</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Formulario de Contacto -->
+                <div class="p-8 bg-secondary-lavender rounded-xl shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-primary-purple">Envíanos un Mensaje</h3>
+                    <form onsubmit="handleContact(event)">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Nombre</label>
+                            <input type="text" id="name" required class="w-full p-3 rounded-lg border border-primary-purple/50 focus:border-primary-purple focus:ring-1 focus:ring-primary-purple">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" required class="w-full p-3 rounded-lg border border-primary-purple/50 focus:border-primary-purple focus:ring-1 focus:ring-primary-purple">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 font-semibold mb-2">Asunto</label>
+                            <input type="text" id="subject" required class="w-full p-3 rounded-lg border border-primary-purple/50 focus:border-primary-purple focus:ring-1 focus:ring-primary-purple">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Mensaje</label>
+                            <textarea id="message" rows="4" required class="w-full p-3 rounded-lg border border-primary-purple/50 focus:border-primary-purple focus:ring-1 focus:ring-primary-purple"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-primary-purple text-neutral-white font-bold rounded-lg shadow-lg hover:bg-primary-purple/90 transition transform hover:scale-[1.01] duration-200">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Información de Contacto Directa y Redes -->
+                <div class="space-y-8 p-8 lg:p-0">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-dark-text">Información Directa</h3>
+                        <p class="text-lg text-gray-700 mb-2"><strong>Email:</strong> info@weesmoois.com</p>
+                        <p class="text-lg text-gray-700 mb-2"><strong>Teléfono:</strong> +57 310 555 1234</p>
+                        <p class="text-lg text-gray-700"><strong>Dirección:</strong> Calle Ficticia 45-21, Bogotá, Colombia</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-dark-text">Síguenos</h3>
+                        <div class="flex space-x-4">
+                            <!-- Iconos de Redes Sociales (Simulación con texto) -->
+                            <a href="#" class="text-4xl text-primary-purple hover:text-primary-purple/70 transition" title="Instagram">📸</a>
+                            <a href="#" class="text-4xl text-primary-purple hover:text-primary-purple/70 transition" title="Facebook">📘</a>
+                            <a href="#" class="text-4xl text-primary-purple hover:text-primary-purple/70 transition" title="TikTok">🎵</a>
+                        </div>
+                    </div>
+
+                    <!-- Mapa de Ubicación (Placeholder) -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-dark-text">Encuéntranos</h3>
+                        <div class="h-64 w-full bg-gray-200 rounded-xl flex items-center justify-center text-gray-500">
+                            [Mapa de Google Maps Placeholder]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-purple py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-neutral-white text-sm">&copy; 2025 wees moois. Todos los derechos reservados. | Desarrollado con ❤️ y Keratina.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Interacciones -->
+    <script>
+        // --- Funcionalidad del Menú Móvil ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Ocultar menú móvil después de un clic en el enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Funcionalidad del Carrito/Mensajes ---
+        const messageBox = document.getElementById('message-box');
+        
+        function showMessage(text) {
+            messageBox.innerHTML = text;
+            messageBox.classList.remove('opacity-0', 'pointer-events-none');
+            messageBox.classList.add('opacity-100', 'pointer-events-auto');
+
+            setTimeout(() => {
+                messageBox.classList.remove('opacity-100', 'pointer-events-auto');
+                messageBox.classList.add('opacity-0', 'pointer-events-none');
+            }, 3000); // Mostrar por 3 segundos
+        }
+
+        function addToCart(productName) {
+            showMessage(`¡${productName} se ha añadido al carrito!`);
+        }
+
+        function handleContact(event) {
+            event.preventDefault();
+            // Lógica de envío de formulario simulada
+            const name = document.getElementById('name').value;
+            showMessage(`¡Gracias, ${name}! Tu mensaje ha sido enviado. Te contactaremos pronto.`);
+            
+            // Opcional: limpiar formulario después de enviar
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('subject').value = '';
+            document.getElementById('message').value = '';
+        }
+
+    </script>
+</body>
+</html>
